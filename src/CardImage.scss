@@ -1,0 +1,46 @@
+$color-title: #333;
+$color-text: #999;
+$scale-value: 1.1;
+$rotate-value: -10deg;
+
+.card-container {
+  cursor: pointer;
+  box-sizing: border-box;
+
+  &:hover {
+    .img-scale {
+      transform: scale($scale-value);
+    }
+
+    .img-rotate {
+      transform: rotate($rotate-value);
+    }
+  }
+
+  .img-container {
+    width: 100%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+
+    .img-scale, .img-rotate {
+      transition: all .4s;
+    }
+  }
+
+  .text-container {
+    .title {
+      color: $color-title;
+    }
+
+    .description {
+      color: $color-text;
+    }
+  }
+}
+
+.shadow {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+}

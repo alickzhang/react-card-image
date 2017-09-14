@@ -24,6 +24,7 @@
     "autoprefixer": "^7.1.4",
     "babel-cli": "^6.26.0",
     "babel-preset-react-app": "^3.0.2",
+    "classnames": "^2.2.5",
     "cssnano": "^3.10.0",
     "node-sass-chokidar": "0.0.3",
     "postcss-cli": "^4.1.1",
