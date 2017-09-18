@@ -4,15 +4,16 @@ import classNames from 'classnames'
 import './CardImage.css'
 
 const CardImage = (props) => {
-  const { animation, width, src, title, description, shadow } = props
+  const { animation, width, src, title, description, shadow, style } = props
   let cardClassName = classNames({
     'card-container': true,
     shadow: shadow
   })
   let imgClassName = classNames(`img-${animation}`)
+  let cardStyle = Object.assign(style, {width: `${width}px`})
 
   return (
-    <div className={cardClassName} style={{width: `${width}px`}}>
+    <div className={cardClassName} style={cardStyle}>
       <div className="img-container">
         <div className={imgClassName}>
           <img src={src} alt={title} />
@@ -32,7 +33,8 @@ CardImage.propTypes = {
   src: PropTypes.string.isRequired,
   title: PropTypes.string,
   description: PropTypes.string,
-  shadow: PropTypes.bool
+  shadow: PropTypes.bool,
+  style: PropTypes.object
 }
 
 CardImage.defaultProps = {
@@ -41,7 +43,8 @@ CardImage.defaultProps = {
   src: '',
   title: '',
   description: '',
-  shadow: false
+  shadow: false,
+  style: {}
 }
 
 export default CardImage
